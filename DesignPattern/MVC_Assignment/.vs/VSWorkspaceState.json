@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Nagarro.BookReading.Application",
+    "\\Nagarro.BookReading.Infrastructure",
+    "\\Nagarro.BookReading.Infrastructure\\bin",
+    "\\Nagarro.BookReading.Infrastructure\\Repository",
+    "\\Nagarro.BookReading.Web",
+    "\\Nagarro.BookReading.Web\\Controllers",
+    "\\Nagarro.BookReading.Web\\Services",
+    "\\Nagarro.BookReading.Web\\Views",
+    "\\Nagarro.BookReading.Web\\Views\\Shared"
+  ],
+  "SelectedNode": "\\Nagarro.BookReading.Infrastructure\\Repository\\Logging.cs",
+  "PreviewInSolutionExplorer": false
+}
