@@ -1,0 +1,126 @@
+<app-admin-common></app-admin-common>
+
+<br>
+
+
+
+<!-- Reimbursement Model start -->
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="myModalLabel">Approve Reimbursement</h1>
+      </div>
+      <div class="modal-body">
+
+        <!-- Success Message -->
+        <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+
+        </div>
+
+        <form class="form" role="form" [formGroup]="userForm" (ngSubmit)="approveReimbursement()">
+          <div class="form-group">
+            <label>ApprovedBy</label>
+            <input type="text" formControlName="approvedBy" placeholder="Please enter your email id"
+              class="form-control rounded-10" name="approvedBy">
+          </div>
+          <br>
+
+          <div class="form-group">
+            <label>Approved Ammount</label>
+            <input type="number" formControlName="approvedValue" placeholder="Please enter Approved Ammount"
+              class="form-control rounded-10" name="approvedValue">
+          </div>
+          <br>
+          <div class="form-group">
+            <label>Internal Notes</label>
+            <input type="text" formControlName="internalNotes" placeholder="Please enter something for internal notes"
+              class="form-control rounded-10" name="internalNotes">
+          </div>
+          <br>
+
+          <button type="submit" class="btn btn-success btn-lg float-right">Approve</button>
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="hide()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Reimbursement Model Close -->
+
+<!-- Success Message -->
+<div *ngIf="successmsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{successmsg}}</strong>
+
+</div>
+<!-- Search Filter -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <input class="form-control mr-sm-2" type="text" name="emailAddress" [(ngModel)]="emailAddress"
+        placeholder="Enter Email Here" aria-label="Search">
+    </div>
+
+    <span class="col-sm">
+    </span>
+
+    <div class="col-sm-2">
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="reimbursementType">
+          <option></option>
+          <option>Medical</option>
+          <option>Travel</option>
+          <option>Food</option>
+          <option>Entertainment</option>
+          <option>Misc</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<!-- Table-->
+
+<div class="systemTable">
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">RequestedBy</th>
+        <th scope="col">Reimbursement Type</th>
+        <th scope="col">Requested Value</th>
+        <th scope="col">Currency</th>
+        <th scope="col">Receipt Attached</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="head" *ngFor="let reimbursement of allData | filter:emailAddress | filter:reimbursementType">
+        <td> {{reimbursement.date}}</td>
+        <td>{{reimbursement.emailAddress}}</td>
+        <td>{{reimbursement.reimbursementType}}</td>
+        <td>{{reimbursement.requestedValue}}</td>
+        <td>{{reimbursement.currency}}</td>
+        <td>{{reimbursement.receiptAttached}}</td>
+        <td>
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <a class="btn btn-outline-dark" (click)="decline(reimbursement.id)">Decline</a>
+            </div>
+            <div class="col-12 col-sm-6">
+              <a class="btn btn-outline-dark" (click)="show(reimbursement.id)">Approved</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

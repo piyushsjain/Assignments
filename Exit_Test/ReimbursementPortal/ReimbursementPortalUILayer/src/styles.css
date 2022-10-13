@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+header{
+    text-align: center; 
+    font-size: 25px;
+    font-family: 'Arial';
+    color: white;
+    background-color: #2fe0ac;;
+    padding: 3px 0px;
+    margin-bottom: 1%;
+}
+
+.btn{
+    margin-right: 8px;
+ }
+
+ .link{
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+
+.systemTable {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.text{   
+    margin-top: 55px;
+    margin-left: 44%;    
+    margin-bottom: -10px;
+    
+}
+
+.index {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

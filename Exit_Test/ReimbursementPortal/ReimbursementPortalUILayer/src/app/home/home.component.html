@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded shadow shadow-sm">
+                        <div class="card-header">
+                            <h2 class="text-center mb-0">LOGIN</h2>
+                        </div>
+                        <div class="card-body">
+
+                            <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>{{errormsg}}</strong>.
+                            </div>
+                            <!-- [formGroup]="userForm" (ngSubmit)="Login()" -->
+                            <form class="form" role="form" [formGroup]="userForm" (ngSubmit)="Login()">
+                                <div class="form-group">
+                                    <label style="font-weight: bold;">Email Address</label>
+                                    <input type="email" formControlName="emailAddress"
+                                        class="form-control rounded-10" name="EmailAddress">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label style="font-weight: bold;">Password</label>
+                                    <input type="Password" formControlName="password"
+                                        class="form-control rounded-10" name="Password">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-outline-success">Login</button>
+                                <a class="btn btn-outline-dark" routerLink="signup">SignUp</a>
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+
+                </div>
+
+
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->

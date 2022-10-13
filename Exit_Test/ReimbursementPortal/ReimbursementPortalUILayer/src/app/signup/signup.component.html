@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 mx-auto">
+
+                    <!-- form card login -->
+                    <div class="card rounded shadow shadow-sm">
+                        <div class="card-header">
+                            <h2 class="mb-0 text-center">SignUp</h2>
+                        </div>
+                        <div class="card-body">
+
+                            <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>{{errormsg}}</strong>
+                            </div>
+
+                            <form class="form" role="form" [formGroup]="userForm" (ngSubmit)="Signup()">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">Full Name</label>
+                                            <input type="text" formControlName="fullname"
+                                                class="form-control rounded-10" name="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">Email Address</label>
+                                            <input type="email" formControlName="emailAddress"
+                                                class="form-control  rounded-10" name="EmailAddress">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">Pan Number</label>
+                                            <input type="text" formControlName="panNumber"
+                                                class="form-control  rounded-10" name="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;" for="exampleFormControlSelect1">Bank</label>
+                                            <select class="form-control" id="exampleFormControlSelect1" formControlName="bank">
+                                                <option disabled>Select Bank Name</option>
+                                                <option>State Bank Of India</option>
+                                                <option>Indusland Bank</option>
+                                                <option>ICICI Bank</option>
+                                                <option>HDFC Bank</option>
+                                                <option>IDFS Bank</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">Bank Number</label>
+                                            <input type="number" formControlName="bankNumber"
+                                                class="form-control  rounded-10" name="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">Password</label>
+                                            <input type="Password" formControlName="password"
+                                                class="form-control  rounded-10" name="Password">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label style="font-weight: bold;">Confirm Password</label>
+                                            <input type="Password" formControlName="confirmPassword"
+                                                class="form-control  rounded-10" name="confirmPassword">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success mt-2">SignUp</button>
+                                <a class="btn btn-outline-dark mt-2" (click)="back()">Already Have an Account !!</a>
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+
+                </div>
+
+
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->

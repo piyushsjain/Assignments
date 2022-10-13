@@ -1,0 +1,35 @@
+<app-admin-common></app-admin-common>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-12">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">RequestedBy</th>
+              <th scope="col">Reimbursement Type</th>
+              <th scope="col">Requested Value</th>
+              <th scope="col">Currency</th>
+              <th scope="col">Receipt Attached</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="head" *ngFor="let reimbursement of allData">
+              <td> {{reimbursement.date}}</td>
+              <td>{{reimbursement.emailAddress}}</td>
+              <td>{{reimbursement.reimbursementType}}</td>
+              <td>{{reimbursement.requestedValue}}</td>
+              <td>{{reimbursement.currency}}</td>
+              <td>{{reimbursement.receiptAttached}}</td>
+              <td>{{reimbursement.requestedPhase}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
